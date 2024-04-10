@@ -71,8 +71,8 @@ def generate_shuffled_txt_img_files_for_train_val(text_file_path, img_width, img
     
 
 # Kall funksjonen med oppdaterte stier og verdier
-base_path = "data_yolov8/2_train-val_1min_after_goal/"  
-text_file_path = "/datasets/tdt4265/other/rbk/2_train-val_1min_after_goal/gt/gt.txt"  
+base_path = "data_yolov8/1_train-val_1min_aalesund_from_start/"  
+text_file_path = "/datasets/tdt4265/other/rbk/1_train-val_1min_aalesund_from_start/gt/gt.txt"  
 img_width = 1920  
 img_height = 1080  
 generate_shuffled_txt_img_files_for_train_val(text_file_path, img_width, img_height, base_path)
