@@ -1,9 +1,10 @@
 import os
 import random
+import shutil
 import cv2
 
 
-def generate_shuffled_txt_img_files_for_train_val(text_file_path, img_width, img_height, base_path, val_ratio=0.2):
+def generate_shuffled_txt_img_files_for_train_val(text_file_path, img_width, img_height, base_path, all_images_path, val_ratio=0.2):
     annotations_by_frame = {}
     
     with open(text_file_path, 'r') as file:
@@ -49,7 +50,13 @@ def generate_shuffled_txt_img_files_for_train_val(text_file_path, img_width, img
             output_file.write("\n".join(annotations_by_frame[frame_number]))
     
     # Distribute the images the same way as the labels
+
+    # If images_path directory does not exist, create it
     images_path = os.path.join(base_path, "images", "all_frames")
+    os.makedirs(images_path, exist_ok=True)
+    # Ensure all frames are in the all_frames directory, if not copy them from all_images_path
+    ensure_all_frames_directory(images_path, all_images_path)
+
     train_images_path = os.path.join(base_path, "images", "train")
     val_images_path = os.path.join(base_path, "images", "val")
     os.makedirs(train_images_path, exist_ok=True)
@@ -68,12 +75,21 @@ def generate_shuffled_txt_img_files_for_train_val(text_file_path, img_width, img
         output_image_path = os.path.join(val_images_path, f"{formatted_frame_number}.jpg")
         img = cv2.imread(image_path)
         cv2.imwrite(output_image_path, img)
+
+def ensure_all_frames_directory(all_frames_path, all_images_path):
+    if not os.listdir(all_frames_path):
+        # all_frames mappen er tom, kopier alle bilder fra all_images_path til all_frames_path
+        for image_name in os.listdir(all_images_path):
+            src_image_path = os.path.join(all_images_path, image_name)
+            dst_image_path = os.path.join(all_frames_path, image_name)
+            shutil.copy2(src_image_path, dst_image_path)
     
 
 # Kall funksjonen med oppdaterte stier og verdier
-base_path = "data_yolov8/1_train-val_1min_aalesund_from_start/"  
-text_file_path = "/datasets/tdt4265/other/rbk/1_train-val_1min_aalesund_from_start/gt/gt.txt"  
+base_path = "data_yolov8/2_train-val_1min_after_goal/"  
+text_file_path = "/datasets/tdt4265/other/rbk/2_train-val_1min_after_goal/gt/gt.txt"  
+all_images_path = "/datasets/tdt4265/other/rbk/2_train-val_1min_after_goal/img1"
 img_width = 1920  
 img_height = 1080  
-generate_shuffled_txt_img_files_for_train_val(text_file_path, img_width, img_height, base_path)
+generate_shuffled_txt_img_files_for_train_val(text_file_path, img_width, img_height, base_path, all_images_path)
 
