@@ -1,6 +1,5 @@
-train: /work/mbergst/TDT4265_Project/data_yolov8/2_train-val_1min_after_goal/images/train
-val: /work/mbergst/TDT4265_Project/data_yolov8/2_train-val_1min_after_goal/images/val
-test: /work/mbergst/TDT4265_Project/data_yolov8/2_train-val_1min_after_goal/images/test
+train: /work/mbergst/project/data_yolov8/2_train-val_1min_after_goal/images/train
+val: /work/mbergst/project/data_yolov8/2_train-val_1min_after_goal/images/val
 
 nc: 2  # Antall klasser
 names: ['ball', 'player']  # Klassenavn

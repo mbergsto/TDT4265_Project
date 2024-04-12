@@ -1,5 +1,5 @@
-train: /work/mbergst/TDT4265_Project/data_yolov8/1_train-val_1min_aalesund_from_start/images/train
-val: /work/mbergst/TDT4265_Project/data_yolov8/3_test_1min_hamkam_from_start/images/test
+train: /work/mbergst/project/data_yolov8/1_train-val_1min_aalesund_from_start/images/train
+val: /work/mbergst/project/data_yolov8/3_test_1min_hamkam_from_start/images/test
 
 
 nc: 2  # Antall klasser
