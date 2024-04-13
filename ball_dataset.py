@@ -1,6 +1,4 @@
 import os
-
-import os
 import random
 import shutil
 import cv2
@@ -89,9 +87,9 @@ def ensure_all_frames_directory(all_frames_path, all_images_path):
     
 
 # Kall funksjonen med oppdaterte stier og verdier
-base_path = "data_yolov8/ball_datasets/2_train-val_1min_after_goal/"  
-text_file_path = "/datasets/tdt4265/other/rbk/2_train-val_1min_after_goal/gt/gt.txt"  
-all_images_path = "/datasets/tdt4265/other/rbk/2_train-val_1min_after_goal/img1"
+base_path = "data_yolov8/ball_datasets/1_train-val_1min_aalesund_from_start/"  
+text_file_path = "/datasets/tdt4265/other/rbk/1_train-val_1min_aalesund_from_start/gt/gt.txt"  
+all_images_path = "/datasets/tdt4265/other/rbk/1_train-val_1min_aalesund_from_start/img1"
 img_width = 1920  
 img_height = 1080  
 generate_ball_dataset(text_file_path, img_width, img_height, base_path, all_images_path)
