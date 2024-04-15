@@ -1,7 +1,7 @@
 task: pose
 mode: train
 model: yolov8n-pose.pt
-data: keypont.yaml
+data: keypoint.yaml
 epochs: 3
 time: null
 patience: 100

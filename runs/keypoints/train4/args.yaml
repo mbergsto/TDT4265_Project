@@ -1,6 +1,6 @@
-task: pose
+task: detect
 mode: train
-model: yolov8n-pose.pt
+model: yolov8n.pt
 data: keypoint.yaml
 epochs: 3
 time: null
