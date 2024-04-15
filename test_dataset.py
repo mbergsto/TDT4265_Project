@@ -36,10 +36,11 @@ def generate_txt_img_files_for_test(text_file_path, img_width, img_height, base_
             height_norm = float(height) / img_height
 
             yolo_format = f"{class_id} {x_center} {y_center} {width_norm} {height_norm}"
-
-            if frame_number not in annotations_by_frame:
-                annotations_by_frame[frame_number] = []
-            annotations_by_frame[frame_number].append(yolo_format)
+            
+            if class_id == 0:
+                if frame_number not in annotations_by_frame:
+                    annotations_by_frame[frame_number] = []
+                annotations_by_frame[frame_number].append(yolo_format)
 
     sorted_frame_numbers = sorted(annotations_by_frame.keys(), key=lambda x: int(x))
     
@@ -67,7 +68,7 @@ def ensure_all_frames_directory(test_images_path, all_images_path):
 
 
 # Kall funksjonen med oppdaterte stier og verdier
-base_path = "data_yolov8/3_test_1min_hamkam_from_start/"  
+base_path = "data_yolov8/ball_datasets/3_test_1min_hamkam_from_start/"  
 text_file_path = "/datasets/tdt4265/other/rbk/3_test_1min_hamkam_from_start/gt/gt.txt"
 all_images_path = "/datasets/tdt4265/other/rbk/3_test_1min_hamkam_from_start/img1/"
 img_width = 1920  
