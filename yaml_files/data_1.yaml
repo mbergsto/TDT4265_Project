@@ -1,0 +1,7 @@
+train: /work/mbergst/TDT4265_Project/data_yolov8/1_train-val_1min_aalesund_from_start/images/train
+val: /work/mbergst/TDT4265_Project/data_yolov8/1_train-val_1min_aalesund_from_start/images/val
+
+
+nc: 2  # Antall klasser
+names: ['ball', 'player']  # Klassenavn
+

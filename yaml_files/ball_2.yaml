@@ -1,0 +1,5 @@
+train: /work/mbergst/TDT4265_Project/data_yolov8/ball_datasets/2_train-val_1min_after_goal/images/train
+val: /work/mbergst/TDT4265_Project/data_yolov8/ball_datasets/2_train-val_1min_after_goal/images/val
+
+nc: 1  # Antall klasser
+names: ['ball']  # Klassenavn
