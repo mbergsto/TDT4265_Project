@@ -19,17 +19,17 @@ fig, ax = plt.subplots()
 
 ax.add_patch(plt.Rectangle((44, 30), 826, 533, fill=False))
 
-# # Plot the 16 meter box
-# ax.add_patch(plt.Rectangle((44, 138), 130, 315, fill=False))
-# ax.add_patch(plt.Rectangle((870, 138), 130, 315, fill=False))
+# # # Plot the 16 meter box
+# # ax.add_patch(plt.Rectangle((44, 138), 130, 315, fill=False))
+# # ax.add_patch(plt.Rectangle((870, 138), 130, 315, fill=False))
 
-# # # Plot the center circle
-# # center_circle = Circle((457, 295), 73, fill=False)
-# # ax.add_patch(center_circle)
+# # # # Plot the center circle
+# # # center_circle = Circle((457, 295), 73, fill=False)
+# # # ax.add_patch(center_circle)
 
-# # Plot 5 meter boxes
-# ax.add_patch(plt.Rectangle((44, 230), 42, 138, fill=False))
-# ax.add_patch(plt.Rectangle((870, 230), 40, 138, fill=False))
+# # # Plot 5 meter boxes
+# # ax.add_patch(plt.Rectangle((44, 230), 42, 138, fill=False))
+# # ax.add_patch(plt.Rectangle((870, 230), 40, 138, fill=False))
 
 
 

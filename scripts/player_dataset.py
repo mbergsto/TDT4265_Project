@@ -86,13 +86,7 @@ def ensure_all_frames_directory(all_frames_path, all_images_path):
             shutil.copy2(src_image_path, dst_image_path)
     
 
-# Kall funksjonen med oppdaterte stier og verdier
-base_path = "data_yolov8/player_datasets/1_train-val_1min_aalesund_from_start/"  
-text_file_path = "/datasets/tdt4265/other/rbk/1_train-val_1min_aalesund_from_start/gt/gt.txt"  
-all_images_path = "/datasets/tdt4265/other/rbk/1_train-val_1min_aalesund_from_start/img1"
-img_width = 1920  
-img_height = 1080  
-generate_player_dataset(text_file_path, img_width, img_height, base_path, all_images_path)
+
 
 
             

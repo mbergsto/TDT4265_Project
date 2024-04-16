@@ -39,9 +39,5 @@ def distribute_files(image_src_folder, label_src_folder, image_dest_folder, labe
         shutil.move(os.path.join(image_src_folder, image), os.path.join(val_image_folder, image))
         shutil.move(os.path.join(label_src_folder, label), os.path.join(val_label_folder, label))
 
-# Kall funksjonen med de faktiske stiene
-image_src_folder = '/work/mbergst/TDT4265_Project/data_yolov8/object_datasets/2_train-val_1min_after_goal/images/all_frames'
-label_src_folder = '/work/mbergst/TDT4265_Project/data_yolov8/keypoint_detection/1_min_afther_goal_keypoint_annotation'
-image_dest_folder = '/work/mbergst/TDT4265_Project/data_yolov8/keypoint_detection/2_train-val_1min_after_goal/images/'
-label_dest_folder = '/work/mbergst/TDT4265_Project/data_yolov8/keypoint_detection/2_train-val_1min_after_goal/labels/'
-distribute_files(image_src_folder, label_src_folder, image_dest_folder, label_dest_folder)
+
+

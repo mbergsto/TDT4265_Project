@@ -1,7 +1,7 @@
 import os
 import shutil
 
-def generate_txt_img_files_for_test(text_file_path, img_width, img_height, base_path, all_images_path):
+def generate_txt_img_files_for_test(text_file_path, img_width, img_height, base_path, all_images_path, type=None):
     """
     Konverterer bildeannotasjoner fra en spesifisert tekstfil til YOLO-formaterte .txt-filer for trening og validering.
 
@@ -37,7 +37,21 @@ def generate_txt_img_files_for_test(text_file_path, img_width, img_height, base_
 
             yolo_format = f"{class_id} {x_center} {y_center} {width_norm} {height_norm}"
             
-            if class_id == 0:
+            if type == "ball":
+                if class_id == 0:
+                    if frame_number not in annotations_by_frame:
+                        annotations_by_frame[frame_number] = []
+                    annotations_by_frame[frame_number].append(yolo_format)
+            
+            elif type == "player":
+                if class_id == 1:
+                    class_id = 0
+                    yolo_format = f"{class_id} {x_center} {y_center} {width_norm} {height_norm}"
+                    if frame_number not in annotations_by_frame:
+                        annotations_by_frame[frame_number] = []
+                    annotations_by_frame[frame_number].append(yolo_format)
+            
+            else:
                 if frame_number not in annotations_by_frame:
                     annotations_by_frame[frame_number] = []
                 annotations_by_frame[frame_number].append(yolo_format)
@@ -66,11 +80,3 @@ def ensure_all_frames_directory(test_images_path, all_images_path):
             shutil.copy2(src_image_path, dst_image_path)
 
 
-
-# Kall funksjonen med oppdaterte stier og verdier
-base_path = "data_yolov8/ball_datasets/3_test_1min_hamkam_from_start/"  
-text_file_path = "/datasets/tdt4265/other/rbk/3_test_1min_hamkam_from_start/gt/gt.txt"
-all_images_path = "/datasets/tdt4265/other/rbk/3_test_1min_hamkam_from_start/img1/"
-img_width = 1920  
-img_height = 1080  
-generate_txt_img_files_for_test(text_file_path, img_width, img_height, base_path, all_images_path)
