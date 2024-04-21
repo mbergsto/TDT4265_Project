@@ -3,13 +3,8 @@ train: /work/mbergst/TDT4265_Project/data_yolov8/keypoint_detection/1_train-val_
 val: /work/mbergst/TDT4265_Project/data_yolov8/keypoint_detection/1_train-val_1min_aalesund_from_start/images/val  # val images (relative to 'path') 4 images
 test:  # test images (optional)
 
-nc: 23  # Number of classes
+nc: 23  # Number of classes actually represented in the training data
 names: [
   '0', '1', '4', '5', '6', '7', '8', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '24', '25', '26', '38'
 ]
 
-kpt_shape: [35, 2]  # Maximum number of keypoints defined in the model
-
-# Keypoints configuration
-#num_classes: 35  # Number of different types of keypoints (if different parts have different types, else same as nc)
-#kpt_labels: [1, 2, 3, ..., 36]  # Key point identifiers if necessary, could be names or numbers
