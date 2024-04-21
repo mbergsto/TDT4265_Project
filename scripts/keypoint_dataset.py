@@ -30,14 +30,11 @@ def distribute_files(image_src_folder, label_src_folder, image_dest_folder, labe
     # Beregner indeksen for å splitte datasettet
     split_index = int(len(all_images) * ratio)
 
-    # Fordeler filer til trenings- og valideringsmapper
+    # Fordeler filer til trenings- og valideringsmapper ved å kopiere
     for image, label in zip(all_images[:split_index], all_labels[:split_index]):
-        shutil.move(os.path.join(image_src_folder, image), os.path.join(train_image_folder, image))
-        shutil.move(os.path.join(label_src_folder, label), os.path.join(train_label_folder, label))
+        shutil.copy(os.path.join(image_src_folder, image), os.path.join(train_image_folder, image))
+        shutil.copy(os.path.join(label_src_folder, label), os.path.join(train_label_folder, label))
 
     for image, label in zip(all_images[split_index:], all_labels[split_index:]):
-        shutil.move(os.path.join(image_src_folder, image), os.path.join(val_image_folder, image))
-        shutil.move(os.path.join(label_src_folder, label), os.path.join(val_label_folder, label))
-
-
-
+        shutil.copy(os.path.join(image_src_folder, image), os.path.join(val_image_folder, image))
+        shutil.copy(os.path.join(label_src_folder, label), os.path.join(val_label_folder, label))
