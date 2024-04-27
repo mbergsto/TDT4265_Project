@@ -1,5 +1,5 @@
-train: /work/mbergst/TDT4265_Project/data_yolov8/keypoint_detection/2_train-val_1min_after_goal/images/train
-val: /work/mbergst/TDT4265_Project/data_yolov8/keypoint_detection/2_train-val_1min_after_goal/images/val
+train: /work/aakesh/TDT4265_Project/data_yolov8/keypoint_detection/2_train-val_1min_after_goal/images/train
+val: /work/aakesh/TDT4265_Project/data_yolov8/keypoint_detection/2_train-val_1min_after_goal/images/val
 test: null
 nc: 19
 names:
