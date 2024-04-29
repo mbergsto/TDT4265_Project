@@ -27,8 +27,8 @@ def generate_player_dataset(text_file_path, img_width, img_height, base_path, al
 
     # Shuffle frame numbers to randomly distribute them between train and val sets
     frame_numbers = list(annotations_by_frame.keys())
-    random.seed(42)
-    random.shuffle(frame_numbers)
+    # random.seed(42)
+    # random.shuffle(frame_numbers)
     split_index = int(len(frame_numbers) * (1 - val_ratio))
     
     train_frames = frame_numbers[:split_index]
