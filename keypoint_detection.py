@@ -48,4 +48,27 @@ model_players = YOLO('yolov8n.pt')
 #results = model_combined.train(data=yaml_file_combined, epochs=50, batch=14, imgsz=(1920, 1080), project='/work/mbergst/TDT4265_Project/runs/detect/combined')
 #results = model_ball.train(data=yaml_file_ball, epochs=50, batch=14, imgsz=(1920, 1080), project='/work/mbergst/TDT4265_Project/runs/detect/ball')
 #results = model_ball.train(data=yaml_file_ball, cfg = 'hyperparams_tuned.yaml', epochs=50, batch=14, imgsz=(1920, 1080), project='/work/mbergst/TDT4265_Project/runs/detect/ball')
-results = model_players.train(data=yaml_file_player, patience=6, epochs=50, batch=14, imgsz=(1920, 1080), project='/work/mbergst/TDT4265_Project/runs/detect/player')
+#results = model_players.train(data=yaml_file_player, patience=6, epochs=50, batch=14, imgsz=(1920, 1080), project='/work/mbergst/TDT4265_Project/runs/detect/player')
+
+
+# Test modellen på testsette
+
+# model_ball_old = YOLO("/work/mbergst/TDT4265_Project/runs/detect/ball/train6/weights/best.pt")
+# model_ball = YOLO("/work/mbergst/TDT4265_Project/runs/detect/ball/train10/weights/best.pt")
+# model_ball_tune = YOLO("/work/mbergst/TDT4265_Project/runs/detect/ball/train12/weights/best.pt")
+
+# test_ball_tune = model_ball_tune.val(data=test_ball, cfg='hyperparameters_tuned.yaml',batch=14, imgsz=(1920, 1080), project = '/work/mbergst/TDT4265_Project/runs/detect/ball/test')
+# test_ball_old = model_ball_old.val(data=test_ball, batch=14, imgsz=(1920, 1080), project = '/work/mbergst/TDT4265_Project/runs/detect/ball/test')
+# test_ball = model_ball.val(data=test_ball, batch=14, imgsz=(1920, 1080), project = '/work/mbergst/TDT4265_Project/runs/detect/ball/test')
+
+
+#model_players = YOLO('/work/mbergst/TDT4265_Project/runs/detect/player/train11/weights/best.pt')
+#test_players = model_players.val(data=test_players, batch=14, imgsz=(1920, 1080), project = '/work/mbergst/TDT4265_Project/runs/detect/player/test')
+
+#model_combined = YOLO('/work/mbergst/TDT4265_Project/runs/detect/combined/train23/weights/best.pt')
+#test_combined = model_combined.val(data=test_combined, batch=14, imgsz=(1920, 1080), project = '/work/mbergst/TDT4265_Project/runs/detect/player/test')
+
+
+results = model_ball.train(data=yaml_file_ball, cfg = 'hyperparams_tuned.yaml', epochs=500, patience = 50, batch=14, imgsz=(1920, 1080), project='/work/mbergst/TDT4265_Project/runs/detect/ball')
+results = model_combined.train(data=yaml_file_combined, epochs=500, patience=50, batch=14, imgsz=(1920, 1080), project='/work/mbergst/TDT4265_Project/runs/detect/combined')
+results = model_players.train(data=yaml_file_player, patience=50, epochs=500, batch=14, imgsz=(1920, 1080), project='/work/mbergst/TDT4265_Project/runs/detect/player')
