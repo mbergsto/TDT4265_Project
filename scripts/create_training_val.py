@@ -25,15 +25,20 @@ def generate_shuffled_txt_img_files_for_train_val(text_file_paths, img_width, im
                     if class_id == 1:
                         class_id = 0
                         yolo_format = f"{class_id} {x_center} {y_center} {width_norm} {height_norm}"
-                        annotations_by_frame[frame_number] = [yolo_format]
-                
+                        if frame_number not in annotations_by_frame:
+                            annotations_by_frame[frame_number] = []
+                        annotations_by_frame[frame_number].append(yolo_format)
                 elif ball_only:
                     if class_id == 0:
                         yolo_format = f"{class_id} {x_center} {y_center} {width_norm} {height_norm}"
-                        annotations_by_frame[frame_number] = [yolo_format]
+                        if frame_number not in annotations_by_frame:
+                            annotations_by_frame[frame_number] = []
+                        annotations_by_frame[frame_number].append(yolo_format)
                 else:
                     yolo_format = f"{class_id} {x_center} {y_center} {width_norm} {height_norm}"
-                    annotations_by_frame[frame_number] = [yolo_format]
+                    if frame_number not in annotations_by_frame:
+                        annotations_by_frame[frame_number] = []
+                    annotations_by_frame[frame_number].append(yolo_format)
             
         dataset_prefix += 1
     frame_numbers = list(annotations_by_frame.keys())
@@ -102,19 +107,4 @@ def ensure_all_frames_directory(all_frames_path, all_images_paths):
     
 
 
-
-
-txt_file_paths = ["/datasets/tdt4265/other/rbk/1_train-val_1min_aalesund_from_start/gt/gt.txt", "/datasets/tdt4265/other/rbk/2_train-val_1min_after_goal/gt/gt.txt"]
-img_folder_paths = ["/datasets/tdt4265/other/rbk/1_train-val_1min_aalesund_from_start/img1/", "/datasets/tdt4265/other/rbk/2_train-val_1min_after_goal/img1/"]
-object_path = f"data/object_dataset/"  
-ball_path = f"data/ball_dataset/"  
-player_path = f"data/player_dataset/"
-
-
-img_width = 1920  
-img_height = 1080  
-
-generate_shuffled_txt_img_files_for_train_val(txt_file_paths, img_width, img_height, object_path, img_folder_paths)
-generate_shuffled_txt_img_files_for_train_val(txt_file_paths, img_width, img_height, ball_path, img_folder_paths, ball_only=True)
-generate_shuffled_txt_img_files_for_train_val(txt_file_paths, img_width, img_height, player_path, img_folder_paths, players_only=True)
 
