@@ -1,0 +1,5 @@
+train: /work/mbergst/TDT4265_Project/data_yolov8/player_dataset/images/train
+val: /work/mbergst/TDT4265_Project/data_yolov8/player_dataset/images/val
+
+nc: 1  # Antall klasser
+names: ['player']  # Klassenavn
