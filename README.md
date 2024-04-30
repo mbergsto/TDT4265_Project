@@ -38,6 +38,6 @@ python keypoint_detection.ipynb (keypoint detection)
 
 
 ## Configuration
-- Update `xxx` with model paths, thresholds, and other necessary parameters to fine-tune the detection algorithms.
+- Update `xxx` with model paths, thresholds, and other necessary parameters to fine-tune the object detection.
 
 - Update `botsort.yaml` to change parameters for tracking.
