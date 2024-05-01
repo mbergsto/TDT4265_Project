@@ -69,6 +69,14 @@ model_players = YOLO('yolov8n.pt')
 #test_combined = model_combined.val(data=test_combined, batch=14, imgsz=(1920, 1080), project = '/work/mbergst/TDT4265_Project/runs/detect/player/test')
 
 
-results = model_ball.train(data=yaml_file_ball, cfg = 'hyperparams_tuned.yaml', epochs=500, patience = 50, batch=14, imgsz=(1920, 1080), project='/work/mbergst/TDT4265_Project/runs/detect/ball')
-results = model_combined.train(data=yaml_file_combined, epochs=500, patience=50, batch=14, imgsz=(1920, 1080), project='/work/mbergst/TDT4265_Project/runs/detect/combined')
-results = model_players.train(data=yaml_file_player, patience=50, epochs=500, batch=14, imgsz=(1920, 1080), project='/work/mbergst/TDT4265_Project/runs/detect/player')
+#results = model_ball.train(data=yaml_file_ball, cfg = 'hyperparams_tuned.yaml', epochs=500, patience = 50, batch=14, imgsz=(1920, 1080), project='/work/mbergst/TDT4265_Project/runs/detect/ball')
+results = model_combined.train(data=yaml_file_combined, epochs=100, patience=10, batch=14, imgsz=(1920, 1080), project='/work/mbergst/TDT4265_Project/runs/detect/combined')
+results = model_players.train(data=yaml_file_player, patience=10, epochs=100, batch=14, imgsz=(1920, 1080), project='/work/mbergst/TDT4265_Project/runs/detect/player')
+
+#model_ball_tune = YOLO("/work/mbergst/TDT4265_Project/runs/detect/ball/train13/weights/best.pt")
+
+#test_ball_tune = model_ball_tune.val(data=test_ball, cfg='hyperparameters_tuned.yaml',batch=14, imgsz=(1920, 1080), project = '/work/mbergst/TDT4265_Project/runs/detect/ball/test')
+
+#model_combined = YOLO("/work/mbergst/TDT4265_Project/runs/detect/combined/train23/weights/best.pt")
+
+#test_combined = model_combined.val(data=test_combined, batch=14, imgsz=(1920, 1080), project = '/work/mbergst/TDT4265_Project/runs/detect/player/test')
