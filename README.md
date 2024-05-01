@@ -33,11 +33,16 @@ pip install -r requirements.txt
 
 ### Usage
 Run the main scripts to start the detection process:
-python trainer.ipynb (Object detection and tracker)
-python keypoint_detection.ipynb (keypoint detection)
+python object_detection_tracker.py (Object detection and tracker)
+python keypoint_detection.py (keypoint detection)
+python keypoint_mapping xxxxx
 
 
 ## Configuration
-- Update `xxx` with model paths, thresholds, and other necessary parameters to fine-tune the object detection.
+- Update `hyperparameters_tuned.yaml` with model paths, thresholds, and other necessary parameters to fine-tune the object detection for the ball.
+- The combined model uses yolov8 inital args.yaml, found in the runs folder
 
 - Update `botsort.yaml` to change parameters for tracking.
+
+- Update `test_params_keypoints.yaml` to change parameters for keypoint detection
+
