@@ -1,11 +1,11 @@
 task: detect
 mode: train
-model: /work/mbergst/TDT4265_Project/runs/detect/combined/train2/weights/best.pt
-data: yaml_files/player_2.yaml
-epochs: 3
+model: yolov8n.pt
+data: yaml_files/player.yaml
+epochs: 100
 time: null
-patience: 100
-batch: 8
+patience: 10
+batch: 14
 imgsz:
 - 1920
 - 1080
