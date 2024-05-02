@@ -8,13 +8,14 @@ This project implements an advanced detection system focusing on both object det
 ## Features
 - **Object Detection**: Utilizes YOLO (You Only Look Once) models to identify and locate various objects in an image.
 - **Keypoint Detection**: Employs advanced deep learning models to detect and map keypoints related to players and other relevant objects.
+- **Keypoint Mapping**: Uses detected keypoints to map object positions from frames in the training set to real position on a full pitch image.
 - **Performance Metrics**: Provides detailed analysis like precision, recall, and mean Average Precision (mAP) metrics for both objects and keypoints across different sets of images.
 
 ## Getting Started
 These instructions will help you set up the project locally for development and testing purposes.
 
 ### Prerequisites
-- Python 3.8+
+- Python 3.10.12+
 - pip
 
 ### Installation
@@ -23,7 +24,7 @@ git clone https://github.com/mbergsto/TDT4265_Project.git
 
 
 2. **Setup a virtual environment** 
-python -m venv .venv
+python -m venv .venv\
 source .venv/bin/activate
 
 
@@ -32,15 +33,15 @@ pip install -r requirements.txt
 
 
 ### Usage
-Run the main scripts to start the detection process:
-python object_detection_tracker.py (Object detection and tracker)
-python keypoint_detection.py (keypoint detection)
+Run the main scripts to start the detection process:\
+python object_detection_tracker.py (Object detection and tracker)\
+python keypoint_detection.py (keypoint detection)\
 python keypoint_mapping xxxxx
 
 
 ## Configuration
 - Update `hyperparameters_tuned.yaml` with model paths, thresholds, and other necessary parameters to fine-tune the object detection for the ball.
-- The combined model uses yolov8 inital args.yaml, found in the runs folder
+- The combined model uses yolov8 inital args.yaml, found in the runs folder after a training run
 
 - Update `botsort.yaml` to change parameters for tracking.
 

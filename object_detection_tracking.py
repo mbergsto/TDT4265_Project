@@ -65,12 +65,12 @@ model_players = YOLO('yolov8n.pt')
 # Ball uses hyperparameters from hyperparams_tuned.yaml
 results = model_combined.train(data=yaml_file_combined, epochs=50, batch=14, imgsz=(1920, 1080), project='/work/mbergst/TDT4265_Project/runs/detect/combined')
 results = model_ball.train(data=yaml_file_ball, cfg = 'hyperparams_tuned.yaml', epochs=50, batch=14, imgsz=(1920, 1080), project='/work/mbergst/TDT4265_Project/runs/detect/ball')
-#results = model_players.train(data=yaml_file_player, epochs=50, batch=14, imgsz=(1920, 1080), project='/work/mbergst/TDT4265_Project/runs/detect/player')
+results = model_players.train(data=yaml_file_player, epochs=50, batch=14, imgsz=(1920, 1080), project='/work/mbergst/TDT4265_Project/runs/detect/player')
 
 # Test the models on the test dataset and save the results to runs/detect/"dataset"/test
 test_combined = model_combined.val(data=test_combined, batch=14, imgsz=(1920, 1080), project = '/work/mbergst/TDT4265_Project/runs/detect/combined/test')
 test_ball = model_ball.val(data=test_ball, batch=14, imgsz=(1920, 1080), project = '/work/mbergst/TDT4265_Project/runs/detect/ball/test')
-#test_players = model_players.val(data=test_players, batch=14, imgsz=(1920, 1080), project = '/work/mbergst/TDT4265_Project/runs/detect/player/test')
+test_players = model_players.val(data=test_players, batch=14, imgsz=(1920, 1080), project = '/work/mbergst/TDT4265_Project/runs/detect/player/test')
 
 # Function to find the latest model trained with the best weights
 
