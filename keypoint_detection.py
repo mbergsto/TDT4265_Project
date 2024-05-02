@@ -28,7 +28,7 @@ else:
 
 # Define paths for image and label folders
 image_src_folder = f'/datasets/tdt4265/other/rbk/{data_folder}/img1'
-label_src_folder = f'/work/mbergst/TDT4265_Project/data_yolov8/keypoint_labels/{labels}'
+label_src_folder = f'/work/mbergst/TDT4265_Project/keypoint_labels/{labels}'
 image_dest_folder = f'/work/mbergst/TDT4265_Project/data_yolov8/keypoint_detection/{data_folder}/images/'
 label_dest_folder = f'/work/mbergst/TDT4265_Project/data_yolov8/keypoint_detection/{data_folder}/labels/'
 
@@ -42,7 +42,7 @@ distribute_files(image_src_folder, label_src_folder, image_dest_folder, label_de
 model = YOLO('yolov8n.pt')
 
 # Train model and save results to runs/keypoints/"dataset", with test_params_keypoints.yaml as configuration file
-#results = model.train(data=yaml_file, cfg = 'test_params_keypoints.yaml', epochs=100, batch=30, imgsz=1280, project=f'/work/mbergst/TDT4265_Project/runs/keypoints/{data_folder}')
+results = model.train(data=yaml_file, cfg = 'test_params_keypoints.yaml', epochs=100, batch=30, imgsz=1280, project=f'/work/mbergst/TDT4265_Project/runs/keypoints/{data_folder}')
 
 # Find the latest model with the best performance
 def find_latest_model_with_best(base_path, data_folder, type='keypoints'):
