@@ -10,5 +10,7 @@ test_players = "yaml_files/test_files/test_players.yaml"
 model_combined = YOLO('yolov8n.pt')
 model_ball = YOLO('yolov8n.pt')
 model_players = YOLO('yolov8n.pt')
+model_ball = YOLO('/work/mbergst/TDT4265_Project/runs/detect/ball/train13/weights/best.pt')
 model_combined = YOLO('/work/mbergst/TDT4265_Project/runs/detect/combined/train23/weights/best.pt')
-test_combined = model_combined.val(data=test_combined, batch=14, imgsz=(1920, 1080), project = '/work/mbergst/TDT4265_Project/runs/detect/player/test')
+test_ball = model_ball.val(data=test_ball,  batch=14, imgsz=(1920, 1080), project = '/work/mbergst/TDT4265_Project/runs/detect/ball/test')
+test_combined = model_combined.val(data=test_combined, batch=14, imgsz=(1920, 1080), project = '/work/mbergst/TDT4265_Project/runs/detect/combined/test')
