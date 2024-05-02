@@ -1,17 +1,5 @@
-# # Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
-# train: /work/mbergst/TDT4265_Project/data_yolov8/keypoint_detection/2_train-val_1min_after_goal/images/train  # train images (relative to 'path') 4 images
-# val: /work/mbergst/TDT4265_Project/data_yolov8/keypoint_detection/2_train-val_1min_after_goal/images/val  # val images (relative to 'path') 4 images
-# test:  # test images (optional)
-
-# nc: 19  # Number of classes actually represented in the training data
-# names: [
-#   '1', '5', '6', '7', '15', '17', '18', '19', '20', '21', '24', '25', '26', '27', '28', '30', '31', '32', '38'
-#   ]
-
-
-# Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
-train: /work/mbergst/TDT4265_Project/data_yolov8/keypoint_detection/2_train-val_1min_after_goal/images/train  # train images (relative to 'path') 4 images
-val: /work/mbergst/TDT4265_Project/data_yolov8/keypoint_detection/2_train-val_1min_after_goal/images/val  # val images (relative to 'path') 4 images
+train: /work/mbergst/TDT4265_Project/data_yolov8/keypoint_detection/2_train-val_1min_after_goal/images/train 
+val: /work/mbergst/TDT4265_Project/data_yolov8/keypoint_detection/2_train-val_1min_after_goal/images/val 
 test:  # test images (optional)
 
 nc: 35  # Number of classes
